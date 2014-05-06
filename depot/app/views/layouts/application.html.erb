@@ -19,10 +19,12 @@
         <li><a href="http://www..../news">News</a></li>
         <li><a href="http://www..../contact">Contact</a></li>
       </ul>
+      <p><%= Time.now.strftime("%d.%m.%Y %H:%M:%S") %></p>
+    </div>
+    <div id="main">
+      <%= yield %>
     </div>
   </div>
-  <div id="main">
-    <%= yield %>
-  </div>
+
 </body>
 </html>
