@@ -1,12 +1,11 @@
 require 'test_helper'
-
 class ProductsControllerTest < ActionController::TestCase
   setup do
     @product = products(:one)
     @update = {
       title:       'Lorem Ipsum',
       description: 'Wibbles are fun!',
-      mage_url:    'lorem.jpg',
+      image_url:    'lorem.jpg',
       price:       19.95
     }
   end
@@ -29,7 +28,9 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to product_path(assigns(:product))
   end
+
 # ...
+
   test "should show product" do
     get :show, id: @product
     assert_response :success
@@ -44,7 +45,9 @@ class ProductsControllerTest < ActionController::TestCase
     patch :update, id: @product, product: @update
     assert_redirected_to product_path(assigns(:product))
   end
+
 # ...
+
   test "should destroy product" do
     assert_difference('Product.count', -1) do
       delete :destroy, id: @product
@@ -52,6 +55,4 @@ class ProductsControllerTest < ActionController::TestCase
 
     assert_redirected_to products_path
   end
-
-
 end

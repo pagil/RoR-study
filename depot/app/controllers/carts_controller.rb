@@ -73,10 +73,10 @@ class CartsController < ApplicationController
       params[:cart]
     end
 
-    private
-      # log error message
-      def invalid_cart
-        logger.error "Attempt to access invalid cart #{params[:id]}"
-        redirect_to store_url, notice: 'Invalid cart'
-      end
+
+    # log error message
+    def invalid_car
+      logger.error "Attempt to access invalid cart #{params[:id]}"
+      redirect_to store_url, notice: 'Invalid cart'
+    end
 end
